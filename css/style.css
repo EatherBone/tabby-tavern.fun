@@ -1,0 +1,560 @@
+/* General Body Styles */
+:root {
+    --bg-color-light: #fdf5e6;
+    --text-color-light: #4a4a4a;
+    --card-bg-light: #ffffff;
+    --header-bg-light: #ffffff;
+    --primary-orange: #d35400;
+    --accent-orange: #e67e22;
+    --accent-yellow: #f39c12;
+    --muted-text-light: #7f8c8d;
+    
+    --bg-color-dark: #1f232c;
+    --text-color-dark: #e0e0e0;
+    --card-bg-dark: #2c323f;
+    --header-bg-dark: #262a35;
+    --muted-text-dark: #95a5a6;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    margin: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--header-bg-light);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 5%;
+    transition: background-color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.guild-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--primary-orange);
+    border-bottom-color: var(--accent-yellow);
+}
+
+.theme-toggle-button {
+    background: none;
+    border: none;
+    color: var(--text-color-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.theme-toggle-button:hover {
+    transform: scale(1.1);
+    color: var(--primary-orange);
+}
+
+
+/* Main Content Styles */
+.main-content {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Homepage */
+.hero {
+    margin-bottom: 60px;
+}
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: var(--primary-orange);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.discord-button {
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.discord-button:hover {
+    background-color: var(--primary-orange);
+}
+
+/* Staff, Rules page */
+.content-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-orange);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--accent-yellow);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Rules & Staff Card Styles */
+.rule-item, .staff-member {
+    background-color: var(--card-bg-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.rule-item {
+    border-left: 5px solid var(--accent-orange);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.rule-item h3 {
+    margin-top: 0;
+    color: var(--primary-orange);
+}
+
+.rules-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.staff-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.staff-member:hover {
+    transform: translateY(-5px);
+}
+
+.staff-member h3 {
+    margin: 0 0 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-orange);
+}
+
+.staff-role {
+    font-style: bold;
+    color: var(--muted-text-light);
+    transition: color 0.3s;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--header-bg-light);
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: var(--muted-text-light);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* --- DARK MODE STYLE --- */
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: var(--header-bg-dark);
+    box-shadow: none;
+    border-color: var(--card-bg-dark);
+}
+
+body.dark-mode nav ul li a {
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .theme-toggle-button {
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .rule-item,
+body.dark-mode .staff-member {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .staff-role {
+    color: var(--muted-text-dark);
+}
+
+body.dark-mode footer {
+    color: var(--muted-text-dark);
+}
+
+/* --- staff sorting style --- */
+
+/* President container */
+.staff-president {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* President card */
+.staff-member.president {
+    max-width: 200px;
+    margin: 0 auto;
+    border: 2px solid var(--accent-yellow); 
+    transform: scale(1.05);
+}
+
+body.dark-mode .staff-member.president {
+    border-color: var(--primary-orange);
+}
+
+
+/* filters container */
+.staff-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* for mobile kekw */
+}
+
+/* filter buttons */
+.filter-btn {
+    background-color: var(--card-bg-light);
+    border: 2px solid var(--accent-orange);
+    color: var(--accent-orange);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-orange);
+    color: #ffffff;
+}
+
+/* active button style */
+.filter-btn.active-filter {
+    background-color: var(--primary-orange);
+    border-color: var(--primary-orange);
+    color: #ffffff;
+}
+
+
+/* Dark Theme for buttons */
+body.dark-mode .filter-btn {
+    background-color: var(--card-bg-dark);
+    color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+
+body.dark-mode .filter-btn:hover {
+    background-color: var(--accent-yellow);
+    color: var(--bg-color-dark);
+}
+
+body.dark-mode .filter-btn.active-filter {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: #ffffff;
+}
+
+/* SmOoTh sheesh */
+.staff-member {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* staff list style */
+.staff-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Было 250px */
+    gap: 20px;
+}
+
+.staff-member {
+    background-color: var(--card-bg-light);
+    padding: 15px; /* Было 20px */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.staff-member.president {
+    max-width: 260px; /* Было 300px */
+	max-height: 150px; /* Было 300px */
+    margin: 0 auto;
+    border: 2px solid var(--accent-yellow);
+    transform: scale(1.05);
+}
+
+.staff-member:hover {
+    transform: translateY(-5px);
+}
+
+.staff-avatar {
+    width: 70px; 
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 12px; 
+    object-fit: cover;
+    border: 3px solid var(--card-bg-light);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: border-color 0.3s;
+}
+
+.staff-name {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-orange);
+    font-weight: bold;
+    font-size: 1.1rem; 
+    margin-bottom: 5px;
+}
+
+.staff-role {
+    font-style: bold;
+    color: var(--muted-text-light);
+    transition: color 0.3s;
+    margin-top: 0;
+}
+
+/* --- BACKGROUND A N I M A T I O N (yea im cool) --- */
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden; 
+    pointer-events: none; 
+}
+
+.background-animation li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    
+    /* Tabby Cat can fly */
+    background-image: url('../img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+
+/* speed and size randomizer */
+
+.background-animation li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.background-animation li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.background-animation li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.background-animation li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.background-animation li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.background-animation li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.background-animation li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.background-animation li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.background-animation li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.background-animation li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+/* SmOoTh scrolling is here */
+html {
+    scroll-behavior: smooth;
+}
+
+/* SmOoTh appearance on loading */
+.main-content {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.discord-button:active,
+.filter-btn:active,
+.back-to-top:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Up button style */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--primary-orange);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 45px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    
+    /* hide by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--accent-orange);
+}
